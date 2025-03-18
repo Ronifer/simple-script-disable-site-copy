@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Copy Text Block Example</title>
+    <style>
+        html {
+            user-select: none;
+        }
+
+        html::selection {
+            background: none;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Copy Text Block Example</h1>
+
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore
+        magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
+
+    <script>
+        // NO COPY SCRIPTS
+        
+        // CANCEL SELECTION
+        document.addEventListener("selectionchange", e => window.getSelection().empty());
+
+        //DISABLE CLIPBOARD COPY
+        document.querySelector("body")
+            .addEventListener("copy", e => {
+                e.clipboardData.setData("text/plain", "Cópia desabilitada!");
+                e.preventDefault();
+            });
+
+        // DISABLE CONTEXT MENU
+        document.querySelector("body")
+            .addEventListener("contextmenu", e => e.preventDefault());
+    </script>
+
+
+</body>
+
+</html>
