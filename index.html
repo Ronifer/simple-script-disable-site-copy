@@ -31,7 +31,7 @@
         //DISABLE CLIPBOARD COPY
         document.querySelector("body")
             .addEventListener("copy", e => {
-                e.clipboardData.setData("text/plain", "Cópia desabilitada!");
+                e.clipboardData.setData("text/plain", "Copy disabled!");
                 e.preventDefault();
             });
 
